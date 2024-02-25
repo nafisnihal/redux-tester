@@ -3,7 +3,7 @@ import LeftSide from "./LeftSide";
 import RightSide from "./RightSide";
 
 const SideBySide = () => {
-  const count = useAppSelector((state) => state.counter.value);
+  const count = useAppSelector((state) => state?.value);
   return (
     <div className="flex gap-5  mt-5">
       <LeftSide count={count} />
