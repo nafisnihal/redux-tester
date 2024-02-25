@@ -3,6 +3,7 @@ import SideBySide from "@components/SideBySide";
 import {
   amountAdded,
   amountReduced,
+  clearAll,
   decremented,
   incremented,
 } from "@features/counter/counterSlice";
@@ -24,6 +25,10 @@ function App() {
 
   const handleAmountReduced = () => {
     dispatch(amountReduced(5));
+  };
+
+  const handleClearAll = () => {
+    dispatch(clearAll());
   };
 
   return (
@@ -52,6 +57,12 @@ function App() {
           className=" p-2 bg-yellow-50 rounded text-black"
         >
           To decrease -5
+        </button>
+        <button
+          onClick={handleClearAll}
+          className=" p-2 bg-yellow-50 rounded text-black"
+        >
+          To clear all
         </button>
       </div>
       <SideBySide />
