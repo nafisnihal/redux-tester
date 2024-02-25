@@ -1,12 +1,20 @@
 import { useAppDispatch } from "@app/hooks";
 import SideBySide from "@components/SideBySide";
-import { amountAdded, incremented } from "@features/counter/counterSlice";
+import {
+  amountAdded,
+  decremented,
+  incremented,
+} from "@features/counter/counterSlice";
 
 function App() {
   const dispatch = useAppDispatch();
 
   const handleIncrement = () => {
     dispatch(incremented());
+  };
+
+  const handleDecrement = () => {
+    dispatch(decremented());
   };
 
   const handleAmountAdded = () => {
@@ -27,6 +35,12 @@ function App() {
           className=" p-2 bg-yellow-50 rounded text-black"
         >
           To increase +5
+        </button>
+        <button
+          onClick={handleDecrement}
+          className=" p-2 bg-yellow-50 rounded text-black"
+        >
+          To decrease -1
         </button>
       </div>
       <SideBySide />
